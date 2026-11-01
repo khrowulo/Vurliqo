@@ -155,6 +155,16 @@ export default function Profile({ userId }) {
                 Follow Request
               </Button>
             )}
+
+          {user.is_current_user ? (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.location.href = '/settings/profile/edit'}
+            >
+              Edit Profile
+            </Button>
+          ) : null}
           </div>
 
           {/* Stats */}
