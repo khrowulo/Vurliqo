@@ -9,7 +9,7 @@ import { Input } from '../../components/ui/input';
 
 export default function BusinessChat() {
   const [isBusinessVerified, setIsBusinessVerified] = useState(false);
-  const [messages, setMessages] = useState[];
+  const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,7 +18,7 @@ export default function BusinessChat() {
     setMessages([
       {
         id: '1',
-        content: 'Hello! I'm interested in your services.',
+        content: 'Hello! I\'m interested in your services.',
         created_at: new Date(),
         sender: { username: 'business_owner', avatar_url: '/placeholder-av.png', is_business: true, verified: true },
         is_current_user: false,
