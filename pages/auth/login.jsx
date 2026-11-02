@@ -1,6 +1,7 @@
 /*
  * Vurliqo - Login Page
  * Phase 2: Login with email/password and Google OAuth
+ * Uses Lovable Cloud authentication, NOT Supabase
  */
 
 import Image from 'next/image';
@@ -8,7 +9,7 @@ import Link from 'next/link';
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { useState } from 'react';
-import { supabase } from '../../lib/supabaseClient';
+import { lovableCloudClient as supabase } from '../../lib/lovableCloudClient';
 import { useRouter } from 'next/router';
 
 export default function LoginPage() {
@@ -36,6 +37,8 @@ export default function LoginPage() {
       
       if (data.user) {
         router.push('/');
+      } else {
+        alert(error?.message || 'Invalid email or password');
       }
     } catch (err) {
       console.error('Error logging in:', err);

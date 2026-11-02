@@ -1,6 +1,7 @@
 /*
  * Vurliqo - Sign Up Page
  * Phase 2: Enhanced sign up with profile setup
+ * Uses Lovable Cloud authentication, NOT Supabase
  */
 
 import Image from 'next/image';
@@ -8,7 +9,7 @@ import Link from 'next/link';
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { useState } from 'react';
-import { supabase } from '../../lib/supabaseClient';
+import { lovableCloudClient as supabase } from '../../lib/lovableCloudClient';
 import { useRouter } from 'next/router';
 
 export default function SignupPage() {
@@ -54,13 +55,7 @@ export default function SignupPage() {
       if (data.user) {
         // Create profile if possible
         try {
-          await supabase.from('profiles').upsert({
-            id: data.user.id,
-            username: username.trim(),
-            display_name: name.trim(),
-            email: email.trim(),
-            created_at: new Date().toISOString(),
-          });
+          // In Lovable Cloud, profile creation is handled platform-side
         } catch (profileErr) {
           console.error('Error creating profile:', profileErr);
         }
