@@ -5,15 +5,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import { useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
+import { useRouter } from 'next/router';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [showGoogle, setShowGoogle] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,18 +25,38 @@ export default function LoginPage() {
     }
     setIsLoading(true);
     try {
-      // In a real implementation, would use Supabase Auth
-      // For now, just check credentials and navigate
-      if (email === 'test@test.com' && password === 'password123') {
-        window.location.href = '/';
-      } else {
-        alert('Invalid email or password');
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password: password.trim(),
+      });
+      
+      if (error) {
+        throw error;
+      }
+      
+      if (data.user) {
+        router.push('/');
       }
     } catch (err) {
       console.error('Error logging in:', err);
-      alert('Error during login. Please try again.');
+      alert(err.message || 'Error during login. Please try again.');
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/`,
+        },
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error('Error signing in with Google:', err);
+      alert(err.message || 'Error during Google sign in.');
     }
   };
 
@@ -49,8 +71,8 @@ export default function LoginPage() {
             height={120}
             className="mx-auto block mb-4"
           />
-          <h1 className="text-2xl font-bold text-gray-900">Log In</h1>
-          <p className="text-sm text-gray-500">Welcome back!</p>
+          <h1 className="text-2xl font-bold text-white">Log In</h1>
+          <p className="text-sm text-gray-400">Welcome back!</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -75,34 +97,34 @@ export default function LoginPage() {
             variant="primary"
             type="submit"
             disabled={isLoading}
+            className="w-full"
           >
             {isLoading ? 'Logging in...' : 'Log In'}
           </Button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
-          <a href="/auth/signup" className="underline">
+        <div className="mt-6 text-center text-sm text-gray-400">
+          <Link href="/auth/signup" className="underline">
             Don't have an account? Sign Up
-          </a>
+          </Link>
         </div>
 
-        {/* Google Sign In */}
-        {showGoogle && (
-          <div className="mt-6 text-center">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full"
-            >
-              Continue with Google
-            </Button>
-          </div>
-        )}
+        <div className="mt-6">
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full"
+            onClick={handleGoogleSignIn}
+            disabled={isLoading}
+          >
+            Continue with Google
+          </Button>
+        </div>
 
-        <div className="mt-8 text-center text-sm text-gray-500">
-          <a href="/auth/forgot-password" className="underline">
+        <div className="mt-8 text-center text-sm text-gray-400">
+          <Link href="/auth/forgot-password" className="underline">
             Forgot password?
-          </a>
+          </Link>
         </div>
       </div>
     </main>

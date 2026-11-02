@@ -6,8 +6,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function MessagingInbox() {
   const [conversations, setConversations] = useState([]);
@@ -122,7 +122,7 @@ export default function MessagingInbox() {
           <div className="flex gap-3">
             <Input
               type="text"
-              placeholder "Search conversations..."
+              placeholder="Search conversations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-1 rounded-l-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"

@@ -5,8 +5,8 @@
 
 import { useState, useEffect } from 'react';
 import { Image } from 'next/image';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function Profile({ userId }) {
   const [user, setUser] = useState(null);
@@ -263,7 +263,7 @@ export default function Profile({ userId }) {
             <div className="mb-4">
               <Input
                 type="text"
-                placeholder "Search or add usernames..."
+                placeholder="Search or add usernames..."
                 className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
               <Button

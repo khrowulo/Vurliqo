@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function RoleAccessControl({ userId, role }) {
   const [userRole, setUserRole] = useState(role);

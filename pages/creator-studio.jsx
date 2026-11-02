@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useRouter } from 'next/link';
-import { Button } from '../components/ui/button';
+import { Button } from "../components/ui/button";
 
 export default function CreatorStudioMain({ userId }) {
   const router = useRouter();

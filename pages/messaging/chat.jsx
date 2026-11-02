@@ -5,8 +5,8 @@
 
 import { useState, useEffect } from 'react';
 import { Image } from 'next/image';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function Chat({ conversationId, conversationType }) {
   const [messages, setMessages] = useState([]);
@@ -84,7 +84,7 @@ export default function Chat({ conversationId, conversationType }) {
                   <circle cx="8.5" cy="8.5" r="5.5" />
                   <polyline points="21 16 16 21 5 21" />
                 </svg>
-              </svg>
+              </div>
             )}
             <div>
               <p className="font-medium text-white">{conversationType === 'direct' ? 'Friend' : 'Group Chat'}</p>
@@ -92,7 +92,6 @@ export default function Chat({ conversationId, conversationType }) {
             </div>
           </div>
 
-          {/* New message button for quick access */}
           <Button
             variant="outline"
             size="sm"
@@ -133,7 +132,7 @@ export default function Chat({ conversationId, conversationType }) {
           <div className="flex gap-3">
             <Input
               type="text"
-              placeholder "Type a message..."
+              placeholder="Type a message..."
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               disabled={isTyping}

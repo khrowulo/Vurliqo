@@ -4,8 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function MultipleAccounts({ userId }) {
   const [accounts, setAccounts] = useState([
@@ -118,7 +118,7 @@ export default function MultipleAccounts({ userId }) {
               type="text"
               value={newAccountName}
               onChange={(e) => setNewAccountName(e.target.value)}
-              placeholder "Account name"
+              placeholder="Account name"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-3"
             />
             <Button

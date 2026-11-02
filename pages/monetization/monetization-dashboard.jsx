@@ -9,7 +9,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function MonetizationDashboard({ userId }) {
   const [eligibility, setEligibility] = useState({

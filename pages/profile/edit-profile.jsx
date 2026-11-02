@@ -5,8 +5,8 @@
 
 import { useState, useEffect } from 'react';
 import { Image } from 'next/image';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function EditProfile({ userId }) {
   const [displayName, setDisplayName] = useState('');
@@ -129,7 +129,7 @@ export default function EditProfile({ userId }) {
               type="text"
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
-              placeholder "Display name"
+              placeholder="Display name"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
@@ -142,7 +142,7 @@ export default function EditProfile({ userId }) {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder "username"
+                placeholder="username"
                 disabled={isSaving}
                 className="flex-1 rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
@@ -176,7 +176,7 @@ export default function EditProfile({ userId }) {
               type="text"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
-              placeholder "Tell people who you are..."
+              placeholder="Tell people who you are..."
               rows={3}
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
             />
@@ -190,7 +190,7 @@ export default function EditProfile({ userId }) {
               type="text"
               value={website}
               onChange={(e) => setWebsite(e.target.value)}
-              placeholder "https://example.com"
+              placeholder="https://example.com"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
             <p className="text-xs text-gray-400 mt-1">Must start with http:// or https://</p>
@@ -203,7 +203,7 @@ export default function EditProfile({ userId }) {
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              placeholder "Location"
+              placeholder="Location"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
@@ -231,7 +231,7 @@ export default function EditProfile({ userId }) {
               type="text"
               value={pronouns}
               onChange={(e) => setPronouns(e.target.value)}
-              placeholder "he/him, she/her, they/them..."
+              placeholder="he/him, she/her, they/them..."
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>

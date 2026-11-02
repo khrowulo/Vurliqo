@@ -4,8 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function AccountTypes({ userId }) {
   const [currentAccountType, setCurrentAccountType] = useState('personal');
@@ -90,7 +90,7 @@ export default function AccountTypes({ userId }) {
                 type="text"
                 value={accountName}
                 onChange={(e) => setAccountName(e.target.value)}
-                placeholder "Creator name"
+                placeholder="Creator name"
                 className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-3"
               />
               <select
@@ -133,14 +133,14 @@ export default function AccountTypes({ userId }) {
                 type="text"
                 value={accountName}
                 onChange={(e) => setAccountName(e.target.value)}
-                placeholder "Business name"
+                placeholder="Business name"
                 className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-3"
               />
               <Input
                 type="text"
                 value={businessDescription}
                 onChange={(e) => setBusinessDescription(e.target.value)}
-                placeholder "Describe your business"
+                placeholder="Describe your business"
                 className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-3 rows={3}"
               />
               <Button

@@ -5,8 +5,8 @@
 
 import { useState, useEffect } from 'react';
 import { Image } from 'next/image';
-import { Button } from '../../../components/ui/button';
-import { Input } from '../../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function Saved({ userId }) {
   const [collections, setCollections] = useState([]);
@@ -82,7 +82,7 @@ export default function Saved({ userId }) {
         <form onSubmit={handleCreateCollection} className="mb-6 rounded-xl bg-gray-800 p-4 border border-gray-700">
           <Input
             type="text"
-            placeholder "New collection name..."
+            placeholder="New collection name..."
             value={newCollectionName}
             onChange={(e) => setNewCollectionName(e.target.value)}
             className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"

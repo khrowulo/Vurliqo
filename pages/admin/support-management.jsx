@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function SupportManagement({ userId, role }) {
   const [tickets, setTickets] = useState([]);

@@ -5,8 +5,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import { useState } from 'react';
 
 export default function SearchPage() {
@@ -56,7 +56,7 @@ export default function SearchPage() {
           <div className="flex gap-3">
             <Input
               type="text"
-              placeholder "Search..."
+              placeholder="Search..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               disabled={false}

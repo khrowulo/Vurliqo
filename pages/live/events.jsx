@@ -5,8 +5,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function Events({ userId }) {
   const [events, setEvents] = useState([]);
@@ -126,9 +126,7 @@ export default function Events({ userId }) {
                 <h3 className="font-medium text-white">{event.name}</h3>
                 <p className="text-sm text-gray-400">{event.description}</p>
                 <p className="text-xs text-gray-400">
-                  {event.date.toLocaleDateString()} • {' "}
                   {event.isPublic ? 'Public' : 'Private'}
-                  </span>
                 </p>
                 <div className="mt-2">
                   <Button

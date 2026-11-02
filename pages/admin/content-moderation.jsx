@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function ContentModeration({ userId, role }) {
   const [reports, setReports] = useState([]);
@@ -66,6 +66,7 @@ export default function ContentModeration({ userId, role }) {
         )}
 
         {hasModeratorAccess && (
+          <>
           <div className="grid grid-cols-1 gap-6 mb-8">
             {/* Pending Reports */}
             <div>
@@ -136,6 +137,7 @@ export default function ContentModeration({ userId, role }) {
               Escalate
             </Button>
           </div>
+          </>
         )}
       </div>
     </main>

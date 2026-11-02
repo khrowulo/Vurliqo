@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function GroupChats() {
   const [groups, setGroups] = useState([]);
@@ -68,13 +68,13 @@ export default function GroupChats() {
         <form onSubmit={handleCreate} className="mb-6 rounded-xl bg-gray-800 p-4 border border-gray-700">
           <div className="grid grid-cols-2 gap-3 mb-3">
             <Input
-              placeholder "Group name"
+              placeholder="Group name"
               value={newGroupName}
               onChange={(e) => setNewGroupName(e.target.value)}
               className="rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
             <Input
-              placeholder "Description (optional)"
+              placeholder="Description (optional)"
               value={newGroupDescription}
               onChange={(e) => setNewGroupDescription(e.target.value)}
               className="rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"

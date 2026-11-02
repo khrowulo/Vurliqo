@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function ReelsCreate() {
   const [caption, setCaption] = useState('');
@@ -42,7 +42,7 @@ export default function ReelsCreate() {
           <Input
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
-            placeholder "Add a caption..."
+            placeholder="Add a caption..."
             className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
             rows={3}
           />
@@ -50,7 +50,7 @@ export default function ReelsCreate() {
           <Input
             value={hashtag}
             onChange={(e) => setHashtag(e.target.value)}
-            placeholder "#hashtag"
+            placeholder="#hashtag"
             className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
           />
 

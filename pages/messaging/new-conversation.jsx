@@ -4,14 +4,14 @@
  */
 
 import { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function NewConversation() {
   const [recipientUsernames, setRecipientUsernames] = useState('');
   const [conversationType, setConversationType] = useState('direct'); // direct or group
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [users, setUsers] = useState[]; // Search results
+  const [users, setUsers] = useState([]); // Search results
 
   const handleSearch = async (e) => {
     const query = e.target.value.trim();
@@ -54,7 +54,7 @@ export default function NewConversation() {
           <form onSubmit={handleCreate} className="w-full space-y-4">
             <Input
               type="text"
-              placeholder "Recipients (usernames, separated by comma)"
+              placeholder="Recipients (usernames, separated by comma)"
               value={recipientUsernames}
               onChange={(e) => setRecipientUsernames(e.target.value)}
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -74,13 +74,13 @@ export default function NewConversation() {
           <form onSubmit={handleCreate} className="w-full space-y-4">
             <Input
               type="text"
-              placeholder "Group name"
+              placeholder="Group name"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
             
             <Input
               type="text"
-              placeholder "Add participants (usernames, separated by comma)"
+              placeholder="Add participants (usernames, separated by comma)"
               value={recipientUsernames}
               onChange={(e) => setRecipientUsernames(e.target.value)}
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"

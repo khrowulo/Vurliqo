@@ -4,8 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function PrivacySettings({ userId }) {
   const [isPublic, setIsPublic] = useState(true);
@@ -236,7 +236,7 @@ export default function PrivacySettings({ userId }) {
             <p className="text-xs text-gray-400 mb-2">Hide stories from:</p>
             <Input
               type="text"
-              placeholder "Enter usernames (comma separated)"
+              placeholder="Enter usernames (comma separated)"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-3"
             />
           </div>

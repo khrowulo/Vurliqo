@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function AdvancedAnalytics({ userId }) {
   const [accountAnalytics, setAccountAnalytics] = useState({

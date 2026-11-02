@@ -4,8 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function SecuritySettings({ userId }) {
   const [password, setPassword] = useState('');
@@ -78,7 +78,7 @@ export default function SecuritySettings({ userId }) {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder "Enter new password"
+              placeholder="Enter new password"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
@@ -89,7 +89,7 @@ export default function SecuritySettings({ userId }) {
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder "Confirm new password"
+              placeholder="Confirm new password"
               className="w-full rounded-md bg-gray-800 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
@@ -146,7 +146,7 @@ export default function SecuritySettings({ userId }) {
                 key={activity.date}
                 className={activity.status === 'active' ? 'flex items-center gap-3 p-3 rounded-md bg-gray-700' : 'flex items-center gap-3 p-3 rounded-md bg-gray-600 text-gray-400'}
               >
-                <div className="w-3 h-3 rounded-full bg-{activity.status === 'active' ? 'green-500' : 'gray-400'} />
+                <div className={activity.status === 'active' ? 'w-3 h-3 rounded-full bg-green-500' : 'w-3 h-3 rounded-full bg-gray-400'} />
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-white">{activity.device}</p>
                   <p className="text-xs text-gray-400">{activity.location}</p>

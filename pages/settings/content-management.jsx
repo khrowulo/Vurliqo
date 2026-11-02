@@ -4,8 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function ContentManagement({ userId }) {
   const [posts, setPosts] = useState([]);
@@ -135,7 +135,7 @@ export default function ContentManagement({ userId }) {
                 </div>
               ))}
             </div>
-          ))}
+          )}
         </div>
 
         {/* Story Highlights */}
@@ -176,7 +176,7 @@ export default function ContentManagement({ userId }) {
                 </div>
               ))}
             </div>
-          ))}
+          )}
         </div>
 
         {/* Drafts */}
@@ -217,7 +217,7 @@ export default function ContentManagement({ userId }) {
                 </div>
               ))}
             </div>
-          ))}
+          )}
         </div>
 
         {/* Archived Posts */}
@@ -266,7 +266,7 @@ export default function ContentManagement({ userId }) {
                 </div>
               ))}
             </div>
-          ))}
+          )}
         </div>
 
         {/* Actions */}

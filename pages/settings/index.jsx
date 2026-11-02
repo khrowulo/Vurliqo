@@ -5,7 +5,7 @@
 
 import { useState } from 'react';
 import { Link, useRouter } from 'next/link';
-import { Button } from '../components/ui/button';
+import { Button } from "../../components/ui/button";
 
 export default function Settings() {
   const router = useRouter();

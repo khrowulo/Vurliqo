@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 export default function BusinessChat() {
   const [isBusinessVerified, setIsBusinessVerified] = useState(false);
@@ -93,7 +93,7 @@ export default function BusinessChat() {
           <div className="flex gap-3">
             <Input
               type="text"
-              placeholder "Type a message..."
+              placeholder="Type a message..."
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               className="flex-1 rounded-md bg-gray-700 border border-gray-600 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
